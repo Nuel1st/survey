@@ -1,0 +1,52 @@
+<!-- create_start_point.html -->
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Start Point</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="{{ start_form.start_point_chainage.id_for_label }}">Start Point Chainage:</label>
+        {{ start_form.start_point_chainage }}
+        
+        <label for="{{ start_form.location.id_for_label }}">Share a Location (Map):</label>
+        {{ start_form.location }}
+        
+        <label for="{{ start_form.photo.id_for_label }}">Share Start Point Photo:</label>
+        {{ start_form.photo }}
+        
+        <input type="submit" value="Start Point">
+    </form>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
+{% endblock %}
+
+
+<!-- <h2>Start Points</h2>
+<ul>
+    {% for start_point in start_points %}
+    <li>
+        <strong>Chainage:</strong> {{ start_point.chainage }}<br>
+        <strong>Location:</strong> {{ start_point.location }}<br>
+        <strong>Start Point Title:</strong> {{ start_point.title }}<br>
+        <strong>Latitude:</strong> {{ start_point.location_lat }}<br>
+        <strong>Longitude:</strong> {{ start_point.location_lon }}<br>
+        {% if start_point.photo %}
+        <strong>Photo:</strong> <img src="{{ start_point.photo.url }}" alt="Start Point Photo"><br>
+        {% endif %}
+    </li>
+    {% empty %}
+    <li>No start points available.</li>
+    {% endfor %}
+</ul> -->

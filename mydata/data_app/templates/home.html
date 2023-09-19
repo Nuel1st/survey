@@ -1,0 +1,404 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  
+    
+</head>
+
+{% include 'start_point.html' %}
+
+{% include 'end_point.html' %}
+  
+    <hr>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        
+        <h2>Select Activity category</h2>
+        {{ activitycategory_form.activitycategory.label_tag}}
+        {{ activitycategory_form.activitycategory }}
+        
+
+        <br>
+        
+        <h2>Select an Activity type</h2>
+        {{ activitytype_form.activitytype.label_tag}}
+        {{ activitytype_form.activitytype }}
+
+        <br>
+
+        <h2>Select Equipment</h2>
+        {{ equipment_form.equipment.label_tag }}
+        {{ equipment_form.equipment }}
+
+        <br>
+
+        <h2>Select a Site</h2>
+        {{ site_form.site.label_tag }}
+        {{ site_form.site }}
+
+        <br>
+
+        <h2>Select </h2>
+      
+
+
+        <h1>Employee Information  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg> </h1>
+
+        <h2>Select Employee leader</h2>
+        {{ employee_form.employee_form.label_tag }}
+        {{ employee_form.employee }}
+
+        <br>
+
+        <h2>Select Employee role</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 1</h2>
+        {{ employee_one_form.employee_one.label_tag}}
+        {{ employee_one_form.employee_one}}
+
+        <br>
+        <h2>Select Employee role 1</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 2</h2>
+        {{ employee_two_form.employee_two.label_tag}}
+        {{ employee_two_form.employee_two}}
+
+        <br>
+        <h2>Select Employee role 2</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 3</h2>
+        {{ employee_three_form.employee_three.label_tag}}
+        {{ employee_three_form.employee_three}}
+
+        <br>
+        <h2>Select Employee role 3</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 4</h2>
+        {{ employee_four_form.employee_four.label_tag}}
+        {{ employee_four_form.employee_four}}
+
+        <br>
+        <h2>Select Employee role 4</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 5</h2>
+        {{ employee_five_form.employee_five.label_tag}}
+        {{ employee_five_form.employee_five}}
+
+        <br>
+        <h2>Select Employee role 5</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 6</h2>
+        {{ employee_six_form.employee_six.label_tag}}
+        {{ employee_six_form.employee_six}}
+
+        <br>
+        <h2>Select Employee role 6</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 7</h2>
+        {{ employee_seven_form.employee_seven.label_tag}}
+        {{ employee_seven_form.employee_seven}}
+
+        <br>
+        <h2>Select Employee role 7</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 8</h2>
+        {{ employee_eight_form.employee_eight.label_tag}}
+        {{ employee_eight_form.employee_eight}}
+
+        <br>
+        <h2>Select Employee role 8</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 9</h2>
+        {{ employee_nine_form.employee_nine.label_tag}}
+        {{ employee_nine_form.employee_nine}}
+
+        <br>
+        <h2>Select Employee role 9</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 10</h2>
+        {{ employee_ten_form.employee_ten.label_tag}}
+        {{ employee_ten_form.employee_ten}}
+
+        <br>
+        <h2>Select Employee role 10</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 11</h2>
+        {{ employee_one_form.employee_one.label_tag}}
+        {{ employee_one_form.employee_one}}
+
+        <br>
+        <h2>Select Employee role 11</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 12</h2>
+        {{ employee_one_form.employee_one.label_tag}}
+        {{ employee_one_form.employee_one}}
+
+        <br>
+        <h2>Select Employee role 12</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 13 </h2>
+        {{ employee_one_form.employee_one.label_tag}}
+        {{ employee_one_form.employee_one}}
+
+        <br>
+        <h2>Select Employee role 13</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 14</h2>
+        {{ employee_one_form.employee_one.label_tag}}
+        {{ employee_one_form.employee_one}}
+
+        <br>
+        <h2>Select Employee role 14</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Employee 15</h2>
+        {{ employee_one_form.employee_one.label_tag}}
+        {{ employee_one_form.employee_one}}
+
+        <br>
+        <h2>Select Employee role 15</h2>
+        {{ employee_role_form.employee_role.label_tag}}
+        {{ employee_role_form.employee_role }}
+
+        <br>
+
+        <h2>Select Machinery Driver Name</h2>
+        {{ machinery_driver_name_form.machinery_driver_name.label_tag}}
+        {{ machinery_driver_name_form.machinery_driver_name }}
+
+        </div>  
+        <!-- <button type="submit">Submit</button> -->
+       
+    </form>
+    <hr>
+    <div class="gradienst">
+        <h2> <a href="{% url 'upload_media' %}" target="_blank">Upload your videos/photos</></h2>
+    </div>
+    
+   
+    {% if selected_activitytype %}
+    <h2>You selected the activity: {{ selected_activitytype }}</h2>
+    {% endif %}
+
+    {% if selected_equipment %}
+    <h2>You selected the equipment: {{ selected_equipment }}</h2>
+    {% endif %}
+
+    {% if selected_site %}
+    <h2>You selected the site: {{ selected_site }}</h2>
+    {% endif %}
+
+    {% if selected_activitycategory %}
+    <h2>You selected the activitycategory: {{ selected_activitycategory }} </h2>
+    {% endif %}
+
+    {% if selected_employee %}
+    <h2> You selected the employee: {{ selected_employee }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    {% if selected_employee_role %}
+    <h2> You selected the employee role: {{ selected_employee_role }} </h2>
+    {% endif %}
+
+    
+
+    {% if selected_machinery_driver_name %}
+    <h2> You selected the machinery driver name: {{ selected_machinery_driver_name }} </h2>
+    {% endif %} 
+ 
+    <script>
+        $(document).ready(function() {
+          var categoryToType = {
+            'Survey_and_Design': [
+              ['surveying of the area to determine road alignment, width…', 'surveying of the area to determine road alignment, width…'],
+              ['Create detailed road design plans', 'Create detailed road design plans']
+            ],
+      
+            'Clearing_and_Grading': [
+              ['Clear the construction site of vegetation and obstacles', 'Clear the construction site of vegetation and obstacles'],
+              ['Grade and prepare the roadbed to the required specifications', 'Grade and prepare the roadbed to the required specifications']
+            ],
+      
+            'Setting_out_points': [
+              ['Road requirements boundary', 'Road requirements boundary'],
+              ['Cut and fill elevations', 'Cut and fill elevations']
+            ],
+      
+            'Excavation_and_Earthwork': [
+              ['Excavate the roadbed to the required depth and width', 'Excavate the roadbed to the required depth and width'],
+              ['Ensure proper compaction of the subgrade to provide a stable foundation', 'Ensure proper compaction of the subgrade to provide a stable foundation']
+            ],
+      
+            'Subbase_Installation': [
+              ['Lay a layer of subbase material', 'Lay a layer of subbase material'],
+              ['Compact subbase to provide additional stability and drainage', 'Compact subbase to provide additional stability and drainage']
+            ],
+      
+            'Base_Course_Installation': [
+              ['Place of base course material', 'Place of base course material'],
+              ['Compact of base course material', 'Compact of base course material']
+            ],
+      
+            'Paving': [
+              ['Apply an asphalt or concrete surface layer','Apply an asphalt or concrete surface layer'],
+              ['Compact the asphalt or concrete surface layer', 'Compact the asphalt or concrete surface layer']
+            ],
+      
+            'Construction_of_Drainage_Channels': [
+              ['Excavate and shape the drainage channels', 'Excavate and shape the drainage channels'],
+              ['Line the drainage channels with appropriate materials to prevent erosion', 'Line the drainage channels with appropriate materials to prevent erosion'],
+              ['Install culverts or cross-drainage structures as needed to maintain flow and prevent flooding', 'Install culverts or cross-drainage structures as needed to maintain flow and prevent flooding']
+            ],
+      
+            'Sidewalks_and_Shoulders': [
+              ['Construct sidewalks and shoulders', 'Construct sidewalks and shoulders']
+            ],
+      
+            'Road_Markings_and_Signage': [
+              ['Paint road markings, such as lane lines, crosswalks, and directional arrows', 'Paint road markings, such as lane lines, crosswalks, and directional arrows'],
+              ['Install traffic signs and signals', 'Install traffic signs and signals']
+            ],
+      
+            'Vegetation_and_Landscaping': [
+              ['Plant grass or vegetation to prevent erosion', 'Plant grass or vegetation to prevent erosion'],
+              ['Implement landscaping elements to beautify','Implement landscaping elements to beautify']
+            ],
+      
+            'Quality_Control_and_Inspection': [
+              ['Ensure compliance with design specifications and safety standards', 'Ensure compliance with design specifications and safety standards'],
+              ['Conduct quality control tests on materials, compaction, and pavement thickness', 'Conduct quality control tests on materials, compaction, and pavement thickness']
+            ]
+          };
+      
+          function updateActivityTypes() {
+            var selectedCategory = $('#id_activitycategory').val();
+            var typeChoices = categoryToType[selectedCategory] || [];
+            var typeSelect = $('#id_activitytype');
+            typeSelect.empty();
+            for (var i = 0; i < typeChoices.length; i++) {
+              typeSelect.append($('<option></option>').val(typeChoices[i][0]).text(typeChoices[i][1]));
+            }
+          }
+      
+          updateActivityTypes();
+      
+          $('#id_activitycategory').on('change', updateActivityTypes);
+        });
+      </script>
+      <input type="submit" value="Submit">
+      </form>
+      
+      
+
+
+</body>
+</html>
+
+
+{% endblock content %} 

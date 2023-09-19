@@ -1,0 +1,71 @@
+<!-- create_end_point.html -->
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+    <h1>End Point</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="{{ end_form.end_point_chainage.id_for_label }}">End Point Chainage:</label>
+        {{ end_form.end_point_chainage }}
+        
+        <label for="{{ end_form.location.id_for_label }}">Share a Location (Map):</label>
+        {{ end_form.location }}
+        
+        <label for="{{ end_form.photo.id_for_label }}">Share End Point Photo:</label>
+        {{ end_form.photo }}
+        
+        <input type="submit" value="End Point">
+    </form>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
+
+
+{% endblock %}
+
+
+
+
+<!-- <h2>End Points</h2>
+    <ul>
+        {% for end_point in end_points %}
+        <li>
+            <strong>Chainage:</strong> {{ end_point.chainage }}<br>
+            <strong>Location:</strong> {{ end_point.location }}<br>
+            {% if end_point.photo %}
+            <strong>Photo:</strong> <img src="{{ end_point.photo.url }}" alt="End Point Photo"><br>
+            {% endif %}
+        </li>
+        {% empty %}
+        <li>No end points available.</li>
+        {% endfor %}
+    </ul>
+
+    
+
+    <h2>Create End Point</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="{{ end_form.chainage.id_for_label }}">End point chainage (type: integer):</label>
+        {{ end_form.chainage }}
+       
+        <label for="{{ end_form.location.id_for_label }}">Share a location (type: map):</label>
+        {{ end_form.location }}
+       
+        <label for="{{ end_form.photo.id_for_label }}">Share end point photo (type: image):</label>
+        {{ end_form.photo }}
+       
+        <button type="submit">Create End Point</button>
+    </form> -->

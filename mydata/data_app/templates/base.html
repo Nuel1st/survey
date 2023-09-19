@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    {% include 'navbar.html'%}
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="messages">
+        {% messages %}
+    </div>
+</body>
+</html>
