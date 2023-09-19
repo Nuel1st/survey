@@ -473,6 +473,7 @@ EMPLOYEE_ELEVEN_CHOICES = [
     ('Yahya_Moussa', 'Yahya Moussa'),
 ]
 
+
 class Employee_eleven_Form(forms.Form):
     employee_eleven = forms.ChoiceField(choices=EMPLOYEE_ELEVEN_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
 
