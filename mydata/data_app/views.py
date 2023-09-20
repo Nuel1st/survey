@@ -197,13 +197,15 @@ def create_start_point(request):
     if request.method == 'POST':
         form = StartPointForm(request.POST, request.FILES)
         if form.is_valid():
-            request.session['start_point_data'] = {
-                'chainage': form.cleaned_data['start_point_chainage'],  # Correct field name
-                'location': form.cleaned_data['location'],
-                'photo': form.cleaned_data['photo'].url if form.cleaned_data['photo'] else None,
-            }
-            messages.success(request, 'Start Point created successfully.')
-            return redirect('success_page')
+            start_point = StartPoint(
+                start_point_chainage=form.cleaned_data['start_point_chainage'],
+                location=form.cleaned_data['location'],
+                photo=form.cleaned_data['photo']
+            )
+            start_point.save()
+
+            success_message = 'Start Point created successfully.'
+            return render(request, 'start_point.html', {'start_form': form, 'success_message': success_message})
     else:
         form = StartPointForm()
 
@@ -217,18 +219,19 @@ def create_end_point(request):
     if request.method == 'POST':
         form = EndPointForm(request.POST, request.FILES)
         if form.is_valid():
-            request.session['end_point_data'] = {
-                'chainage': form.cleaned_data['chainage'],
-                'location': form.cleaned_data['location'],
-                'photo': form.cleaned_data['photo'].url if form.cleaned_data['photo'] else None,
-            }
-            messages.success(request, 'End Point created successfully.')
-            return redirect('success_page')
+            end_point = EndPoint(
+                end_point_chainage=form.cleaned_data['end_point_chainage'],
+                location=form.cleaned_data['location'],
+                photo=form.cleaned_data['photo']
+            )
+            end_point.save()
+
+            success_message = 'End Point created successfully.'
+            return render(request, 'end_point.html', {'end_form': form, 'success_message': success_message})
     else:
         form = EndPointForm()
 
     return render(request, 'end_point.html', {'end_form': form})
-
 
 
 def success_page(request):

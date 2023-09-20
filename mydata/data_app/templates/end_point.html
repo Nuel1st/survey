@@ -2,6 +2,35 @@
 
 
 {% block content %}
+
+<h1>Create End Point</h1>
+    
+<!-- Display form errors if any -->
+{% if end_form.errors %}
+    <ul>
+        {% for error in end_form.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<!-- End Point Form -->
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ end_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Display success message if it exists -->
+{% if success_message %}
+    <div class="success-message">{{ success_message }}</div>
+{% endif %}
+
+{% endblock %}
+
+
+
+<!-- 
 <!DOCTYPE html>
 <html>
 
@@ -30,42 +59,4 @@
         </ul>
     {% endif %}
 </body>
-</html>
-
-
-{% endblock %}
-
-
-
-
-<!-- <h2>End Points</h2>
-    <ul>
-        {% for end_point in end_points %}
-        <li>
-            <strong>Chainage:</strong> {{ end_point.chainage }}<br>
-            <strong>Location:</strong> {{ end_point.location }}<br>
-            {% if end_point.photo %}
-            <strong>Photo:</strong> <img src="{{ end_point.photo.url }}" alt="End Point Photo"><br>
-            {% endif %}
-        </li>
-        {% empty %}
-        <li>No end points available.</li>
-        {% endfor %}
-    </ul>
-
-    
-
-    <h2>Create End Point</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="{{ end_form.chainage.id_for_label }}">End point chainage (type: integer):</label>
-        {{ end_form.chainage }}
-       
-        <label for="{{ end_form.location.id_for_label }}">Share a location (type: map):</label>
-        {{ end_form.location }}
-       
-        <label for="{{ end_form.photo.id_for_label }}">Share end point photo (type: image):</label>
-        {{ end_form.photo }}
-       
-        <button type="submit">Create End Point</button>
-    </form> -->
+</html> -->

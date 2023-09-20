@@ -1,7 +1,36 @@
 <!-- create_start_point.html -->
 
 {% block content %}
-<!DOCTYPE html>
+    <h1>Create Start Point</h1>
+    
+    <!-- Display form errors if any -->
+    {% if start_form.errors %}
+        <ul>
+            {% for error in start_form.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <!-- Start Point Form -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ start_form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!-- Display success message if it exists -->
+    {% if success_message %}
+        <div class="success-message">{{ success_message }}</div>
+    {% endif %}
+</body>
+</html>
+
+
+{% endblock %}
+
+
+<!-- <!DOCTYPE html>
 <html>
 <body>
     <h1>Start Point</h1>
@@ -29,24 +58,4 @@
         </ul>
     {% endif %}
 </body>
-</html>
-{% endblock %}
-
-
-<!-- <h2>Start Points</h2>
-<ul>
-    {% for start_point in start_points %}
-    <li>
-        <strong>Chainage:</strong> {{ start_point.chainage }}<br>
-        <strong>Location:</strong> {{ start_point.location }}<br>
-        <strong>Start Point Title:</strong> {{ start_point.title }}<br>
-        <strong>Latitude:</strong> {{ start_point.location_lat }}<br>
-        <strong>Longitude:</strong> {{ start_point.location_lon }}<br>
-        {% if start_point.photo %}
-        <strong>Photo:</strong> <img src="{{ start_point.photo.url }}" alt="Start Point Photo"><br>
-        {% endif %}
-    </li>
-    {% empty %}
-    <li>No start points available.</li>
-    {% endfor %}
-</ul> -->
+</html> -->
