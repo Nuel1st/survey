@@ -1,4 +1,4 @@
-{% extends 'main.html' %}
+{% extends 'base/main.html' %}
 
 {% block content %}
 <!DOCTYPE html>
@@ -8,239 +8,325 @@
     
 </head>
 
-{% include 'start_point.html' %}
+{% include 'base/start_point.html' %}
 
-{% include 'end_point.html' %}
+{% include 'base/end_point.html' %}
+<br>
   
     <hr>
-
-    <form method="post">
-        {% csrf_token %}
         
+    <form method="post" action="{% url 'submit_data' %}">
+        {% csrf_token %}
+    <div class="home-background">     
         
         <h2>Select Activity category</h2>
-        {{ activitycategory_form.activitycategory.label_tag}}
-        {{ activitycategory_form.activitycategory }}
-        
 
+        <h3 id="Ti">
+          {{ activitycategory_form.activitycategory.label_tag}}
+          {{ activitycategory_form.activitycategory }}
+        </h3>
+        
         <br>
         
         <h2>Select an Activity type</h2>
-        {{ activitytype_form.activitytype.label_tag}}
-        {{ activitytype_form.activitytype }}
 
+        <h3 id="Ti">
+          {{ activitytype_form.activitytype.label_tag}}
+          {{ activitytype_form.activitytype }}
+        </h3>
 
         <br>
 
         <h2>Select Equipment</h2>
-        {{ equipment_form.equipment.label_tag }}
-        {{ equipment_form.equipment }}
+
+        <h3 id="Ti">
+          {{ equipment_form.equipment.label_tag }}
+          {{ equipment_form.equipment }}
+        </h3>
 
         <br>
 
         <h2>Select a Site</h2>
-        {{ site_form.site.label_tag }}
-        {{ site_form.site }}
+
+        <h3>
+          {{ site_form.site.label_tag }}
+          {{ site_form.site }}
+        </h3>
 
         <br>
-
-        <h2>Select </h2>
       
 
-
-        <h1>Employee Information  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+        <h1 id="emp-info">Employee Information  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
         </svg> </h1>
 
         <h2>Select Employee leader</h2>
-        {{ employee_form.employee_form.label_tag }}
-        {{ employee_form.employee }}
 
+        <h2 id="ls">
+          {{ employee_form.employee_form.label_tag }}
+          {{ employee_form.employee }}
+        </h2>
+        
         <br>
 
         <h2>Select Employee role</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
 
+        </h3>
+      
         <br>
 
         <h2>Select Employee 1</h2>
-        {{ employee_one_form.employee_one.label_tag}}
+        <h3 id="emp_lab">
+          {{ employee_one_form.employee_one.label_tag}}</h3>
         {{ employee_one_form.employee_one}}
 
         <br>
         <h2>Select Employee role 1</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+
+        </h3>
+      
         <br>
 
         <h2>Select Employee 2</h2>
-        {{ employee_two_form.employee_two.label_tag}}
+        <h3 id="emp_lab">{{ employee_two_form.employee_two.label_tag}}</h3>
         {{ employee_two_form.employee_two}}
 
         <br>
         <h2>Select Employee role 2</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
+
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
 
         <br>
 
         <h2>Select Employee 3</h2>
-        {{ employee_three_form.employee_three.label_tag}}
+        <h3 id="emp_lab">{{ employee_three_form.employee_three.label_tag}}</h3>
         {{ employee_three_form.employee_three}}
 
         <br>
         <h2>Select Employee role 3</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 4</h2>
-        {{ employee_four_form.employee_four.label_tag}}
+        <h3 id="emp_lab">{{ employee_four_form.employee_four.label_tag}}</h3>
         {{ employee_four_form.employee_four}}
 
         <br>
         <h2>Select Employee role 4</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+      
         <br>
 
         <h2>Select Employee 5</h2>
-        {{ employee_five_form.employee_five.label_tag}}
+        <h3 id="emp_lab">{{ employee_five_form.employee_five.label_tag}}</h3>
         {{ employee_five_form.employee_five}}
 
         <br>
         <h2>Select Employee role 5</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 6</h2>
-        {{ employee_six_form.employee_six.label_tag}}
+        <h3 id="emp_lab">{{ employee_six_form.employee_six.label_tag}}</h3>
         {{ employee_six_form.employee_six}}
 
         <br>
         <h2>Select Employee role 6</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 7</h2>
-        {{ employee_seven_form.employee_seven.label_tag}}
+        <h3 id="emp_lab">{{ employee_seven_form.employee_seven.label_tag}}</h3>
+        
         {{ employee_seven_form.employee_seven}}
 
         <br>
         <h2>Select Employee role 7</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 8</h2>
-        {{ employee_eight_form.employee_eight.label_tag}}
+        <h3 id="emp_lab">{{ employee_eight_form.employee_eight.label_tag}}</h3>
         {{ employee_eight_form.employee_eight}}
 
         <br>
         <h2>Select Employee role 8</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 9</h2>
-        {{ employee_nine_form.employee_nine.label_tag}}
+        <h3 id="emp_lab">{{ employee_nine_form.employee_nine.label_tag}}</h3>
         {{ employee_nine_form.employee_nine}}
 
         <br>
         <h2>Select Employee role 9</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 10</h2>
-        {{ employee_ten_form.employee_ten.label_tag}}
+        <h3 id="emp_lab">{{ employee_ten_form.employee_ten.label_tag}}</h3>
         {{ employee_ten_form.employee_ten}}
 
         <br>
         <h2>Select Employee role 10</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 11</h2>
-        {{ employee_one_form.employee_one.label_tag}}
+        <h3 id="emp_lab">{{ employee_one_form.employee_one.label_tag}}</h3>
         {{ employee_one_form.employee_one}}
 
         <br>
         <h2>Select Employee role 11</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 12</h2>
-        {{ employee_one_form.employee_one.label_tag}}
+        <h3 id="emp_lab">{{ employee_one_form.employee_one.label_tag}}</h3>
         {{ employee_one_form.employee_one}}
 
         <br>
         <h2>Select Employee role 12</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 13 </h2>
-        {{ employee_one_form.employee_one.label_tag}}
+        <h3 id="emp_lab">{{ employee_one_form.employee_one.label_tag}}</h3>
         {{ employee_one_form.employee_one}}
 
         <br>
         <h2>Select Employee role 13</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
+
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
 
         <br>
 
         <h2>Select Employee 14</h2>
-        {{ employee_one_form.employee_one.label_tag}}
+        <h3 id="emp_lab">{{ employee_one_form.employee_one.label_tag}}</h3>
         {{ employee_one_form.employee_one}}
 
         <br>
         <h2>Select Employee role 14</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
 
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
+        
         <br>
 
         <h2>Select Employee 15</h2>
-        {{ employee_one_form.employee_one.label_tag}}
+        <h3 id="emp_lab">{{ employee_one_form.employee_one.label_tag}}</h3>
         {{ employee_one_form.employee_one}}
 
         <br>
         <h2>Select Employee role 15</h2>
-        {{ employee_role_form.employee_role.label_tag}}
-        {{ employee_role_form.employee_role }}
+
+        <h3>
+          {{ employee_role_form.employee_role.label_tag}}
+          {{ employee_role_form.employee_role }}
+        </h3>
 
         <br>
 
         <h2>Select Machinery Driver Name</h2>
-        {{ machinery_driver_name_form.machinery_driver_name.label_tag}}
+        <h3 id="emp_lab">{{ machinery_driver_name_form.machinery_driver_name.label_tag}}</h3>
         {{ machinery_driver_name_form.machinery_driver_name }}
 
-        </div>  
-        <!-- <button type="submit">Submit</button> -->
+        </div> 
+        <hr>
+
+        <h2 class="intro-media">Upload Media</h2>
+    <br>
+    <h3 id="media">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ mediafile_form.as_p }}
+            <button type="submit">Upload file</button>
+            <!-- <a class="btn btn--dark" href="{% url 'home' %}">Home</a> -->
+            <!-- <button class="btn btn--main" href="{% url 'submit_data' %}">Submit</button> -->
+        </form> 
+    </h3> 
+      <button class="btn btn--main" type="submit">Submit</button>
        
     </form>
-    <hr>
-    <div class="gradienst">
-        <h2> <a href="{% url 'upload_media' %}" target="_blank">Upload your videos/photos</></h2>
-    </div>
+  
+    {% include 'base/media.html' %}
+    <!-- <h2>Upload Media</h2>
+    <br>
+    <h3 id="media">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ media_form.as_p }}
+            <a class="btn btn--dark" href="{% url 'home' %}">Home</a>
+            <button class="btn btn--main" href="{% url 'submit_data' %}">Submit</button>
+        </form> 
+    </h3> -->
+    <!-- <div class="gradiebnt">
+        <h3 id="#emp-info">Upload your videos/photos <a href="{% url 'upload_media' %}"> Here!</></h3>
+    </div> -->
     
    
     {% if selected_activitytype %}
@@ -312,6 +398,10 @@
     {% if selected_machinery_driver_name %}
     <h2> You selected the machinery driver name: {{ selected_machinery_driver_name }} </h2>
     {% endif %} 
+
+
+</div>
+    
  
     <script>
         $(document).ready(function() {
@@ -391,8 +481,7 @@
       
           $('#id_activitycategory').on('change', updateActivityTypes);
         });
-      </script>
-      <input type="submit" value="Submit">
+      </script> 
       </form>
       
       

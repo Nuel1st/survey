@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Template</title>
+</head>
+<body>
+    <h1>Data Collection</h1>
+    <table border="50">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Field 1</th>
+                <th>Field 2</th>
+                <th>Field 3</th>
+                <th>Field 4</th>
+                <th>Field 5</th>
+                <th>Field 6</th>
+                <th>Field 7</th>
+                <th>Field 8</th>
+                <th>Field 9</th>
+                <th>Field 10</th>
+                <th>Field 11</th>
+                <th>Field 12</th>
+                <th>Field 13</th>
+                <th>Field 14</th>
+                <th>Field 15</th>
+                <th>Field 16</th>
+                <th>Field 17</th>
+                <th>Field 18</th>
+                <th>Field 19</th>
+                <th>Field 20</th>
+                <th>Field 21</th>
+                <th>Field 22</th>
+                <th>Field 23</th>
+                <th>Field 24</th>
+                <th>Field 25</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.Field1 }}</td>
+                <td>{{ item.field2 }}</td>
+                <td>{{ item.field3 }}</td>
+                <td>{{ item.field4 }}</td>
+                <td>{{ item.field5 }}</td>
+                <td>{{ item.field5 }}</td>
+                <td>{{ item.field6 }}</td>
+                <td>{{ item.field7 }}</td>
+                <td>{{ item.field8 }}</td>
+                <td>{{ item.field9 }}</td>
+                <td>{{ item.field10 }}</td>
+                <td>{{ item.field11 }}</td>
+                <td>{{ item.field12 }}</td>
+                <td>{{ item.field13 }}</td>
+                <td>{{ item.field14 }}</td>
+                <td>{{ item.field15 }}</td>
+                <td>{{ item.field16 }}</td>
+                <td>{{ item.field17 }}</td>
+                <td>{{ item.field18 }}</td>
+                <td>{{ item.field19 }}</td>
+                <td>{{ item.field20 }}</td>
+                <td>{{ item.field21 }}</td>
+                <td>{{ item.field22 }}</td>
+                <td>{{ item.field23 }}</td>
+                <td>{{ item.field24 }}</td>
+                <td>{{ item.field25 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

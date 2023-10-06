@@ -1,7 +1,16 @@
 from django import forms
 from .models import StartPoint, EndPoint
 from .models import MediaFile 
+from .models import MyModel
+
 # from leaflet.forms.widgets import LeafletWidget
+
+
+class MyModelForm(forms.ModelForm):
+    class Meta:
+        model = MyModel
+        fields = '__all__' 
+
 
 class My_dateForm(forms.Form):
     my_date = forms.DateField(
@@ -669,14 +678,14 @@ class MediaFileForm(forms.Form):
 # Start Point Form
 class StartPointForm(forms.Form):
     start_point_chainage = forms.IntegerField(label='Start Point Chainage', widget=forms.NumberInput(attrs={'type': 'number'}))
-    location = forms.CharField(label='Share a Location (Map)', widget=forms.TextInput(attrs={'type': 'url'}))
+    location = forms.CharField(label='Share Location', widget=forms.TextInput(attrs={'type': 'url'}))
     photo = forms.ImageField(label='Share Start Point Photo', required=False)
 
 # End Point Form
 class EndPointForm(forms.Form):
     end_point_chainage = forms.IntegerField(label='End Point Chainage', widget=forms.NumberInput(attrs={'type': 'number'}))
-    location = forms.CharField(label='Share a Location (Map)', widget=forms.TextInput(attrs={'type': 'url'}))
-    photo = forms.ImageField(label='Share Start Point Photo', required=False)
+    location = forms.CharField(label='Share Location', widget=forms.TextInput(attrs={'type': 'url'}))
+    photo = forms.ImageField(label='Share end Point Photo', required=False)
 
 
 

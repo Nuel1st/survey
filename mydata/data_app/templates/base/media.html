@@ -1,0 +1,24 @@
+    {% block content %}
+
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+    <!-- <h2 class="intro-media">Upload Media</h2>
+    <br>
+    <h3 id="media">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ mediafile_form.as_p }}
+            <button type="submit">Upload file</button>
+            <a class="btn btn--dark" href="{% url 'home' %}">Home</a>
+            <button class="btn btn--main" href="{% url 'submit_data' %}">Submit</button>
+        </form> 
+    </h3> -->
+    {% endblock content %}
+</body>
+</html>

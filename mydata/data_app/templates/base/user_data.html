@@ -1,0 +1,31 @@
+
+
+
+<!-- base/user_data.html -->
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>User-Submitted Data</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Field 1</th>
+                <th>Field 2</th>
+                <th>Field 3</th>
+                <!-- Add more table headers for other fields -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in user_data %}
+            <tr>
+                <td>{{ item.field1 }}</td>
+                <td>{{ item.field2 }}</td>
+                <td>{{ item.field3 }}</td>
+                <!-- Add more table cells for other fields -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
