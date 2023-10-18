@@ -7,7 +7,7 @@
     {% endfor %}
 {% endif %}
     <!-- Start Point Form -->
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" href="{% url 'submit_data' %}">
         {% csrf_token %}
         <h3 id="start_form">
             {{ startpoint_form.as_p }}
@@ -18,40 +18,8 @@
 
         <button class="btn btn--main" href="{% url 'submit_data' %}">Submit</button>
     </form>
-    
+
     <!-- Display success message if it exists -->
     {% if success_message %}
         <div class="success-message">{{ success_message }}</div>
     {% endif %}
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html>
-<body>
-    <h1>Start Point</h1>
-
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <label for="{{ start_form.start_point_chainage.id_for_label }}">Start Point Chainage:</label>
-        {{ start_form.start_point_chainage }}
-        
-        <label for="{{ start_form.location.id_for_label }}">Share a Location (Map):</label>
-        {{ start_form.location }}
-        
-        <label for="{{ start_form.photo.id_for_label }}">Share Start Point Photo:</label>
-        {{ start_form.photo }}
-        
-        <input type="submit" value="Start Point">
-    </form>
-
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-</body>
-</html> -->

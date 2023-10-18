@@ -18,6 +18,19 @@ class My_dateForm(forms.Form):
         label='Select a date'
     )
 
+# Start Point Form
+class StartPointForm(forms.Form):
+    start_point_chainage = forms.IntegerField(label='Start Point Chainage', widget=forms.NumberInput(attrs={'type': 'number'}))
+    location = forms.CharField(label='Share Location', widget=forms.TextInput(attrs={'type': 'url'}))
+    photo = forms.ImageField(label='Share Start Point Photo', required=False)
+
+# End Point Form
+class EndPointForm(forms.Form):
+    end_point_chainage = forms.IntegerField(label='End Point Chainage', widget=forms.NumberInput(attrs={'type': 'number'}))
+    location = forms.CharField(label='Share Location', widget=forms.TextInput(attrs={'type': 'url'}))
+    photo = forms.ImageField(label='Share end Point Photo', required=False)
+
+
 Activitycategory_CHOICES = [
     ('Survey_and_Design', 'Survey and Design'),
     ('Clearing_and_Grading', 'Clearing and Grading'),
@@ -97,8 +110,8 @@ EQUIPMENT_CHOICES = [
 ]
 
 class EquipmentForm(forms.Form):
-    Search_equipment = forms.ChoiceField(choices=EQUIPMENT_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
     equipment = forms.ChoiceField(choices=EQUIPMENT_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
+    # equipment = forms.ChoiceField(choices=EQUIPMENT_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
 
 
 
@@ -675,17 +688,6 @@ class MediaFileForm(forms.Form):
     title = forms.CharField(max_length=255)
     file = forms.FileField()
 
-# Start Point Form
-class StartPointForm(forms.Form):
-    start_point_chainage = forms.IntegerField(label='Start Point Chainage', widget=forms.NumberInput(attrs={'type': 'number'}))
-    location = forms.CharField(label='Share Location', widget=forms.TextInput(attrs={'type': 'url'}))
-    photo = forms.ImageField(label='Share Start Point Photo', required=False)
-
-# End Point Form
-class EndPointForm(forms.Form):
-    end_point_chainage = forms.IntegerField(label='End Point Chainage', widget=forms.NumberInput(attrs={'type': 'number'}))
-    location = forms.CharField(label='Share Location', widget=forms.TextInput(attrs={'type': 'url'}))
-    photo = forms.ImageField(label='Share end Point Photo', required=False)
 
 
 

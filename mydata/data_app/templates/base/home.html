@@ -7,18 +7,24 @@
   
     
 </head>
-
-{% include 'base/start_point.html' %}
-
-{% include 'base/end_point.html' %}
-<br>
-  
     <hr>
         
     <form method="post" action="{% url 'submit_data' %}">
         {% csrf_token %}
-    <div class="home-background">     
-        
+    <!--<div class="home-background">-->
+      
+      <h3 id="start_form">
+        {{ startpoint_form.as_p }}
+      </h3>
+      <br>
+      
+      <h3 id="end_form">
+        {{ endpoint_form.as_p }}
+      </h3>
+
+      <br>
+      <hr>
+      
         <h2>Select Activity category</h2>
 
         <h3 id="Ti">
@@ -291,43 +297,27 @@
 
         <br>
 
+
         <h2>Select Machinery Driver Name</h2>
         <h3 id="emp_lab">{{ machinery_driver_name_form.machinery_driver_name.label_tag}}</h3>
         {{ machinery_driver_name_form.machinery_driver_name }}
 
         </div> 
         <hr>
-
+        
         <h2 class="intro-media">Upload Media</h2>
     <br>
     <h3 id="media">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
             {{ mediafile_form.as_p }}
-            <button type="submit">Upload file</button>
-            <!-- <a class="btn btn--dark" href="{% url 'home' %}">Home</a> -->
-            <!-- <button class="btn btn--main" href="{% url 'submit_data' %}">Submit</button> -->
-        </form> 
     </h3> 
-      <button class="btn btn--main" type="submit">Submit</button>
-       
-    </form>
-  
-    {% include 'base/media.html' %}
-    <!-- <h2>Upload Media</h2>
-    <br>
-    <h3 id="media">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ media_form.as_p }}
-            <a class="btn btn--dark" href="{% url 'home' %}">Home</a>
-            <button class="btn btn--main" href="{% url 'submit_data' %}">Submit</button>
-        </form> 
-    </h3> -->
-    <!-- <div class="gradiebnt">
-        <h3 id="#emp-info">Upload your videos/photos <a href="{% url 'upload_media' %}"> Here!</></h3>
-    </div> -->
+
+    <button type="submit">Submit</button>
     
+  </form>
+  
+
+    
+ 
    
     {% if selected_activitytype %}
     <h2>You selected the activity: {{ selected_activitytype }}</h2>

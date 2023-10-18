@@ -1,37 +1,38 @@
 from django.db import models
 
 
+from django.db import models
+
 class MyModel(models.Model):
-    field1 = models.CharField(max_length=100) 
-    field2 = models.CharField(max_length=100)  # Match with CharField
-    field3 = models.CharField(max_length=100)  # Match with CharField
-    field4 = models.CharField(max_length=100)  # Match with CharField
-    field5 = models.CharField(max_length=100)  # Match with CharField
-    field6 = models.CharField(max_length=100)  # Match with CharField
-    field7 = models.CharField(max_length=100)  # Match with CharField
-    field8 = models.CharField(max_length=100)  # Match with CharField
-    field9 = models.DateField()  # Match with DateField
-    field10 = models.CharField(max_length=100)  # Match with CharField
-    field11 = models.CharField(max_length=100)  # Match with CharField
-    field12 = models.CharField(max_length=100)  # Match with CharField
-    field13 = models.CharField(max_length=100)  # Match with CharField
-    field14 = models.CharField(max_length=100)  # Match with CharField
-    field15 = models.CharField(max_length=100)  # Match with CharField
-    field16 = models.CharField(max_length=100)  # Match with CharField
-    field17 = models.CharField(max_length=100)  # Match with CharField
-    field18 = models.CharField(max_length=100)  # Match with CharField
-    field19 = models.CharField(max_length=100)  # Match with CharField
-    field20 = models.CharField(max_length=100)  # Match with CharField
-    field21 = models.CharField(max_length=100)  # Match with CharField
-    field22 = models.CharField(max_length=100)  # Match with CharField
-    field23 = models.CharField(max_length=100)  # Match with CharField
-    field24 = models.CharField(max_length=100)  # Match with CharField
-    field25 = models.CharField(max_length=100, default='')
-    field26 = models.CharField(max_length=100, default='')
+    start_point_chainage = models.CharField(max_length=100, verbose_name="Start Point Chainage", null=True, blank=True)
+    end_point_chainage = models.CharField(max_length=100, verbose_name="End Point Chainage", null=True, blank=True)
+    activity_type = models.CharField(max_length=100, verbose_name="Activity Type", null=True, blank=True)
+    equipment = models.CharField(max_length=100, verbose_name="Equipment", null=True, blank=True)
+    site = models.CharField(max_length=100, verbose_name="Site", null=True, blank=True)
+    activity_category = models.CharField(max_length=255, verbose_name="activity_category", null=True, blank=True)
+    employee = models.CharField(max_length=100, verbose_name="Employee", null=True, blank=True)
+    employee_role = models.CharField(max_length=100, verbose_name="Employee Role", null=True, blank=True)
+    my_date = models.DateField(verbose_name="My Date", null=True, blank=True)
+    employee_one = models.CharField(max_length=100, verbose_name="Employee One", null=True, blank=True)
+    employee_two = models.CharField(max_length=100, verbose_name="Employee Two", null=True, blank=True)
+    employee_three = models.CharField(max_length=100, verbose_name="Employee Three", null=True, blank=True)
+    employee_four = models.CharField(max_length=100, verbose_name="Employee Four", null=True, blank=True)
+    employee_five = models.CharField(max_length=100, verbose_name="Employee Five", null=True, blank=True)
+    employee_six = models.CharField(max_length=100, verbose_name="Employee Six", null=True, blank=True)
+    employee_seven = models.CharField(max_length=100, verbose_name="Employee Seven", null=True, blank=True)
+    employee_eight = models.CharField(max_length=100, verbose_name="Employee Eight", null=True, blank=True)
+    employee_nine = models.CharField(max_length=100, verbose_name="Employee Nine", null=True, blank=True)
+    employee_ten = models.CharField(max_length=100, verbose_name="Employee Ten", null=True, blank=True)
+    employee_eleven = models.CharField(max_length=100, verbose_name="Employee Eleven", null=True, blank=True)
+    employee_twelve = models.CharField(max_length=100, verbose_name="Employee Twelve", null=True, blank=True)
+    employee_thirteen = models.CharField(max_length=100, verbose_name="Employee Thirteen", null=True, blank=True)
+    employee_fourteen = models.CharField(max_length=100, verbose_name="Employee Fourteen", null=True, blank=True)
+    employee_fifteen = models.CharField(max_length=100, verbose_name="Employee Fifteen", null=True, blank=True)
+    machinery_driver_name = models.CharField(max_length=100, verbose_name="Machinery Driver Name", null=True, blank=True)
 
     def __str__(self):
-        return str(self.field1) 
-    # Add more fields as needed
+        return f"MyModel - {self.start_point_chainage}"  # Customize this representation
+
 
 # Model for Start point
 class StartPoint(models.Model):
@@ -59,7 +60,6 @@ class MediaFile(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 # Model for Activity Category
